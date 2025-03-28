@@ -1,6 +1,4 @@
-package vn.phatbee.tuan9_viewflipper_viewpager_fragment;
-
-import static androidx.core.view.accessibility.AccessibilityEventCompat.setAction;
+package vn.phatbee.tuan9_viewflipper_viewpager_fragment.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,6 +20,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
+import vn.phatbee.tuan9_viewflipper_viewpager_fragment.R;
 import vn.phatbee.tuan9_viewflipper_viewpager_fragment.adapter.ViewPager2Adapter;
 import vn.phatbee.tuan9_viewflipper_viewpager_fragment.databinding.ActivityMainBinding;
 
