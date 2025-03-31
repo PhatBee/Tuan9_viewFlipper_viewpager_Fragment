@@ -29,8 +29,6 @@ import vn.phatbee.tuan9_viewflipper_viewpager_fragment.databinding.ActivityMainB
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     ViewPager2Adapter adapter;
-    Button btnNext;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

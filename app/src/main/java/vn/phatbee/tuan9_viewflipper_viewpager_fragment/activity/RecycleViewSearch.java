@@ -1,7 +1,10 @@
 package vn.phatbee.tuan9_viewflipper_viewpager_fragment.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -26,6 +29,7 @@ public class RecycleViewSearch extends AppCompatActivity {
     IconAdapter iconAdapter;
     SearchView searchView;
     ArrayList<IconModel> arrayList1;
+    Button btnNextFlipper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,15 @@ public class RecycleViewSearch extends AppCompatActivity {
 
         rcIcon = findViewById(R.id.rcIcon);
         searchView = findViewById(R.id.searchView);
+        btnNextFlipper = findViewById(R.id.btnNextFlipper);
+        btnNextFlipper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RecycleViewSearch.this, ViewFlipperActivity.class);
+                startActivity(intent);
+            }
+        });
+
         arrayList1= new ArrayList<>();
         arrayList1.add(new IconModel(R.drawable.icon1, "jfdjfdjf djfdh"));
         arrayList1.add(new IconModel(R.drawable.icon2, "sdfdf sfdsf"));
