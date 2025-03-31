@@ -1,10 +1,12 @@
 package vn.phatbee.tuan9_viewflipper_viewpager_fragment.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -27,17 +29,13 @@ import vn.phatbee.tuan9_viewflipper_viewpager_fragment.databinding.ActivityMainB
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     ViewPager2Adapter adapter;
+    Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
 
         // viewBinding
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -117,6 +115,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+
+        // Tìm button trong menu bằng id
+        MenuItem btnNextRecyclerView = menu.findItem(R.id.btnNextRecyclerView);
+
+        // Gắn sự kiện click cho button
+        btnNextRecyclerView.setOnMenuItemClickListener(item -> {
+            Intent intent = new Intent(MainActivity.this, RecycleViewSearch.class);
+            startActivity(intent);
+            return true;
+        });
+
         return true;
     }
 
