@@ -47,5 +47,7 @@ dependencies {
     implementation (libs.glide)
     annotationProcessor(libs.glideAnnotation)
     implementation(libs.circleindicator)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 }
 

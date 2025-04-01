@@ -1,7 +1,10 @@
 package vn.phatbee.tuan9_viewflipper_viewpager_fragment.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +28,7 @@ public class SlideImagesWithCircleIndicatorAndViewPagerActivity extends AppCompa
     private CircleIndicator circleIndicator;
     private List<Images> imagesList;
     private ImagesViewPageAdapter imagesViewPageAdapter;
+    private Button btnNextSlideRetrofit;
 
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
@@ -66,6 +70,14 @@ public class SlideImagesWithCircleIndicatorAndViewPagerActivity extends AppCompa
         imagesList = getImagesList();
         imagesViewPageAdapter = new ImagesViewPageAdapter(imagesList);
         viewPager.setAdapter(imagesViewPageAdapter);
+        btnNextSlideRetrofit = findViewById(R.id.btnNextSlideRetrofit);
+        btnNextSlideRetrofit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SlideImagesWithCircleIndicatorAndViewPagerActivity.this, SlideImagesWithRetrofitActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // Lien ket viewpager voi Indicator
         circleIndicator.setViewPager(viewPager);
