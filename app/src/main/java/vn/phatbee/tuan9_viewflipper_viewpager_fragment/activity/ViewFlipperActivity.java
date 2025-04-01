@@ -1,10 +1,13 @@
 package vn.phatbee.tuan9_viewflipper_viewpager_fragment.activity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
@@ -31,6 +34,7 @@ import vn.phatbee.tuan9_viewflipper_viewpager_fragment.R;
 
 public class ViewFlipperActivity extends AppCompatActivity {
     ViewFlipper viewFlipperMain;
+    Button btnNextSlideImages2;
 
 
     @Override
@@ -38,11 +42,20 @@ public class ViewFlipperActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_view_flipper);
+        btnNextSlideImages2 = findViewById(R.id.btnNextSlideImages2);
+        btnNextSlideImages2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ViewFlipperActivity.this, SlideImagesWithCircleIndicatorAndViewPagerActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         // 🛠 THÊM DÒNG NÀY: Khởi tạo viewFlipperMain
         viewFlipperMain = findViewById(R.id.viewFlipperMain);
         actionViewFlipper();
+
     }
 
     private void actionViewFlipper(){
