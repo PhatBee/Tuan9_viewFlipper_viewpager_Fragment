@@ -49,5 +49,6 @@ dependencies {
     implementation(libs.circleindicator)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    implementation(libs.android.image.slider)
 }
 

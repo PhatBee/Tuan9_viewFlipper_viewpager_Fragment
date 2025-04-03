@@ -1,5 +1,8 @@
 [versions]
 agp = "8.7.3"
+androidImageSlider = "1.4.0"
+autoimageslider = "1.4.0"
+autoimagesliderVersion = "1.4.0-appcompat"
 circleindicator = "2.1.6"
 glide = "4.16.0"
 glideAnnotation = "4.16.0"
@@ -10,9 +13,11 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.10.1"
 constraintlayout = "2.2.1"
+repo = "Tag"
 retrofit = "2.11.0"
 
 [libraries]
+android-image-slider = { module = "com.github.smarteist:Android-Image-Slider", version.ref = "androidImageSlider" }
 circleindicator = { module = "me.relex:circleindicator", version.ref = "circleindicator" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 glideAnnotation = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glideAnnotation" }
@@ -24,6 +29,7 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+repo = { module = "com.github.User:Repo", version.ref = "repo" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 
 [plugins]
